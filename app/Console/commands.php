@@ -1,6 +1,6 @@
 <?php
 use Bubblegum\Candyman\Candyman;
 
-use App\Console\Commands\Info;
+use App\Console\Commands\LabWork1;
 
-Candyman::registerCommand('info', Info::class);
+Candyman::registerCommand('lab1', LabWork1::class);
