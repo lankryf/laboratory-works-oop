@@ -16,11 +16,15 @@ class LabWork4 extends Command
 
 
         $tree = new BinaryTree();
-        $tree->add(new EncryptedString("Alpha", 5, 2));
-        $tree->add(new EncryptedString("Beta", 4, 3));
-        $tree->add(new EncryptedString("Gamma", 5, 1));
-        $tree->add(new EncryptedString("Delta", 5, 5));
-        $tree->add(new EncryptedString("Epsilon", 7, 4));
+        try {
+            $tree->add(new EncryptedString("Alpha", 5, 2));
+            $tree->add(new EncryptedString("Beta", 4, 3));
+            $tree->add(new EncryptedString("Gamma", 5, 1));
+            $tree->add(new EncryptedString("Delta", 5, 5));
+            $tree->add(new EncryptedString("Epsilon", 7, 4));
+        } catch (\Exception $e) {
+            Console::error($e->getMessage());
+        }
 
         Console::info("Preorder traversal:");
         $tree->preOrderTraversal($tree->root);
