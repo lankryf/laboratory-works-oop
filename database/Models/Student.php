@@ -11,7 +11,7 @@ class Student extends Model
 
     public static function create(array $data): Model
     {
-        if (preg_match('/^[a-zA-Z\s]+$/', $data['name']))
+        if (!preg_match('/^[a-zA-Z\s]+$/', $data['name']))
         {
             throw new \Exception('Only letters and white space allowed');
         }

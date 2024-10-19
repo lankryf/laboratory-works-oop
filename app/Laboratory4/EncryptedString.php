@@ -8,6 +8,10 @@ class EncryptedString {
     private int $key;
 
     public function __construct(string $value, int $size, int $key) {
+        if (!preg_match('/^[a-zA-Z\s]+$/', $value))
+        {
+            throw new \Exception('Invalid encrypted string');
+        }
         $this->value = substr($value, 0, $size);
         $this->size = $size;
         $this->key = $key;
